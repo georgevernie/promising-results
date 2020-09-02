@@ -1,5 +1,5 @@
 let result = 0; // global variable which returns a result from the promise chains.
-resolve();      //syncChain2 function call.
+slowMathChain();      //syncChain2 function call.
 
 /* //! Old ES5 promise chaining
 let syncChain1 = new Promise((resolve) => {resolve();}); 
@@ -49,7 +49,8 @@ syncChain1.then(() => {
 async function syncChain2(resolve) {
     return Promise.resolve();
   }
-async function resolve() {
+  
+async function slowMathChain() {
     try{
         result = await slowMath.add(2,6);
         console.log(result);
